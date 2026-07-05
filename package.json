@@ -1,8 +1,11 @@
 {
-  "name": "serverless-prune-plugin",
+  "name": "@kennethwkz/serverless-prune-plugin",
   "version": "2.1.0",
   "description": "Serverless plugin to delete old versions of deployed functions from AWS",
   "author": "Clay Gregory <clay@claygregory.com> (https://claygregory.com/)",
+	"publishConfig": {
+		"access": "public"
+	},
   "keywords": [
     "serverless",
     "serverless-plugin",
@@ -10,8 +13,8 @@
     "aws-lambda",
     "lambda"
   ],
-  "repository": "claygregory/serverless-prune-plugin",
-  "homepage": "https://github.com/claygregory/serverless-prune-plugin",
+  "repository": "KennethWKZ/serverless-prune-plugin",
+  "homepage": "https://github.com/KennethWKZ/serverless-prune-plugin",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
