@@ -22,7 +22,15 @@ function lambdaRequest(provider, action, params) {
     lambdaClientPromises.set(provider, clientPromise);
   }
   return clientPromise.then((client) => {
-    const { [`${action}Command`]: Command } = require('@aws-sdk/client-lambda');
+    // AWS SDK v3 Command classes are PascalCase (e.g. ListVersionsByFunctionCommand),
+    // while the v2 provider.request() action names are camelCase (e.g. listVersionsByFunction).
+    const commandName = action.charAt(0).toUpperCase() + action.slice(1) + 'Command';
+    const Command = require('@aws-sdk/client-lambda')[commandName];
+    if (typeof Command !== 'function') {
+      throw new Error(
+        `Unsupported Lambda action: ${action} (@aws-sdk/client-lambda does not export ${commandName})`
+      );
+    }
     return client.send(new Command(params));
   });
 }
