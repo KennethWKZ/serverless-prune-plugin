@@ -1,11 +1,11 @@
 {
   "name": "@kennethwkz/serverless-prune-plugin",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Serverless plugin to delete old versions of deployed functions from AWS",
   "author": "Clay Gregory <clay@claygregory.com> (https://claygregory.com/)",
-	"publishConfig": {
-		"access": "public"
-	},
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "serverless",
     "serverless-plugin",
